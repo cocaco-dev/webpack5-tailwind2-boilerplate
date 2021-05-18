@@ -4,7 +4,7 @@ function App() {
     return (
         <div className="test-st">
         <h1 >React Project</h1>
-        <p className="text-9xl">Te amo bebe</p>
+        <p className="text-9xl">REACT + TAILWIND + WEBPACK5</p>
         </div>
     )
 }
