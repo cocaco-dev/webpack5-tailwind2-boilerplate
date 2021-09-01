@@ -1,6 +1,7 @@
 const { merge } = require("webpack-merge")
 const path = require("path")
 const common = require("./webpack.common")
+const Dotenv = require('dotenv-webpack')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { HotModuleReplacementPlugin } = require("webpack")
 /** @type {import('webpack'.Configuration)} */
@@ -9,10 +10,12 @@ const devConfig = {
     devServer: {
         port: 3000,
         contentBase: "../dist",
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     target: "web",
     plugins: [
+        new Dotenv({path: './.env',}),
         new HotModuleReplacementPlugin(),
         new ReactRefreshWebpackPlugin(),
     ],
